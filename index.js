@@ -277,20 +277,14 @@ Aşağıdakileri yapmak için fenomenGonderimSayisi'nı kullanın:
 */
 
 function fenomenGonderimSayisi(fenomenler,fenomenIsmi){
-//   let indeks =0;
-//   for(let i=0; i<fenomenlerListe.length;i++ ){
-//     if(fenomenlerListe[i].isim != fenomenIsmi){
-//       indeks = indeks +1  
-//     } 
-//   }
-//   return fenomenlerListe;
-// }
+  
+  console.log(fenomenler[1].profile);
   let searchedPost = fenomenler.filter((e) => {
       if(e.profile == fenomenIsmi){
-        return e[i];
+        return e;
       }
-    }) 
-   return searchedPost;
+    });
+    return searchedPost[0].posts;
   }
 console.log(fenomenGonderimSayisi(fenomenler,'Will Smith'));
 
@@ -306,11 +300,25 @@ Not: Gönderi sayısı belli olmayan (NA) hesaba katmayın.
 Örnek: platformaGoreCokGonderiYapanFenomen(fenomenler, 'TikTok') çağrıldığında "charli damelio" dönmelidir
 */
 
-function platformaGoreCokGonderiYapanFenomen(fenomenlerListe,platform){
+function platformaGoreCokGonderiYapanFenomen(fenomenlerListe,platformVeri){
+  const platformFollowers = [];
   
+  for(let i =0; i<fenomenlerListe.length;i++){
+    if(fenomenlerListe[i].platform == platformVeri){
+      platformFollowers.push(fenomenlerListe[i].followers);
+    }
+  }    
+  let max = Math.max(...platformFollowers);
+
+  let fenomenIsmi = fenomenler.filter((e) => {
+    if(e.followers == max){
+      return e
+    }
+  });
+  return fenomenIsmi[0].profile;
 }
 
-
+console.log('latformaGoreCokGonderiYapanFenomen',platformaGoreCokGonderiYapanFenomen(fenomenler,'Twitter'));
 
 /* ***** GÖREVLERİN SONU ***** */
 
