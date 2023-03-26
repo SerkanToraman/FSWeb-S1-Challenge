@@ -519,6 +519,6 @@ describe("platformaGoreCokGonderiYapanFenomen", () => {
 
 describe("platformaGoreCokGonderiYapanFenomen", () => {
   it("platformaGoreCokGonderiYapanFenomen ->  Verilen platform da en çok gönderi yapan fenomen adını döndürür", () => {
-    expect(functions.platformaGoreCokGonderiYapanFenomen(fenomenler, "Twitter")).toEqual("Justin Biber");
+    expect(functions.platformaGoreCokGonderiYapanFenomen(fenomenler, "Twitter")).toEqual("Justin Bieber");
   });
 });

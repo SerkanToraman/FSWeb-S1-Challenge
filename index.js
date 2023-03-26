@@ -301,24 +301,28 @@ Not: Gönderi sayısı belli olmayan (NA) hesaba katmayın.
 */
 
 function platformaGoreCokGonderiYapanFenomen(fenomenlerListe,platformVeri){
-  const platformFollowers = [];
+  const platformPosts = [];
   
   for(let i =0; i<fenomenlerListe.length;i++){
     if(fenomenlerListe[i].platform == platformVeri){
-      platformFollowers.push(fenomenlerListe[i].followers);
+      platformPosts.push(fenomenlerListe[i].posts);
     }
   }    
-  let max = Math.max(...platformFollowers);
+  console.log(platformPosts);
+  let max = Math.max(...platformPosts);
 
   let fenomenIsmi = fenomenler.filter((e) => {
-    if(e.followers == max){
+    if(e.posts == max){
       return e
     }
   });
+  console.log(fenomenIsmi);
+  console.log(fenomenIsmi[0].profile);
   return fenomenIsmi[0].profile;
+
 }
 
-console.log('latformaGoreCokGonderiYapanFenomen',platformaGoreCokGonderiYapanFenomen(fenomenler,'Twitter'));
+console.log('platformaGoreCokGonderiYapanFenomen',platformaGoreCokGonderiYapanFenomen(fenomenler,'Twitter'));
 
 /* ***** GÖREVLERİN SONU ***** */
 
