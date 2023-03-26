@@ -186,6 +186,7 @@ Aşağıdakileri yapmak için profilListesi'ni kullanın:
 3. Yeni dizinin üzerinde dolaşın ve dizinin her bir indeksinde yalnızca fenomenin adına eşit olacak şekilde güncelleyin
 🌟 Dönüş ÖRNEĞİ: ["Instagram", "Cristiano Ronaldo", "Kylie"....]
 */
+const fenomenlerYeniListe = [...fenomenler];
 
 function profilListesi(fenomenlerListe) {
   const yeniDizi = [];
@@ -195,7 +196,7 @@ function profilListesi(fenomenlerListe) {
   }return yeniDizi
 }
 
-console.log(profilListesi(fenomenler));
+console.log(profilListesi(fenomenlerYeniListe));
 
 /* Görev 5:
 Aşağıdakileri yapmak için fenomenSil'i kullanın:
@@ -211,7 +212,7 @@ function fenomenSil(fenomenlerListe,indeksDeger) {
   return fenomenlerListe ;
 }
 
-console.log('fenomenSil',fenomenSil(fenomenler,2));
+console.log('fenomenSil',fenomenSil(fenomenlerYeniListe,2));
 
 
 
@@ -244,7 +245,7 @@ function fenomenEkle(fenomenlerListe,ikinciPar,üçüncüPar, dördüncüPar, be
   return fenomenlerListe;
 }
 
-console.log('fenomenEkle',fenomenEkle(fenomenler,6,'Workintech',10000000,2022,'Instagram'));
+console.log('fenomenEkle',fenomenEkle(fenomenlerYeniListe,6,'Workintech',10000000,2022,'Instagram'));
 
 
 /* Görev 7:
@@ -264,7 +265,7 @@ function enFenomenler(fenomenlerListesi) {
   }return enPopulerFenomenlerListesi;
 }
 
-console.log('enFenomenler',enFenomenler(fenomenler));
+console.log('enFenomenler',enFenomenler(fenomenlerYeniListe));
 
 
 /* Görev 8:
@@ -286,7 +287,7 @@ function fenomenGonderimSayisi(fenomenler,fenomenIsmi){
     });
     return searchedPost[0].posts;
   }
-console.log(fenomenGonderimSayisi(fenomenler,'Will Smith'));
+console.log(fenomenGonderimSayisi(fenomenlerYeniListe,'Will Smith'));
 
 
 /* Görev 9:
@@ -308,21 +309,17 @@ function platformaGoreCokGonderiYapanFenomen(fenomenlerListe,platformVeri){
       platformPosts.push(fenomenlerListe[i].posts);
     }
   }    
-  console.log(platformPosts);
   let max = Math.max(...platformPosts);
-
   let fenomenIsmi = fenomenler.filter((e) => {
     if(e.posts == max){
       return e
     }
   });
-  console.log(fenomenIsmi);
-  console.log(fenomenIsmi[0].profile);
-  return fenomenIsmi[0].profile;
 
+  return fenomenIsmi[0].profile;
 }
 
-console.log('platformaGoreCokGonderiYapanFenomen',platformaGoreCokGonderiYapanFenomen(fenomenler,'Twitter'));
+console.log('platformaGoreCokGonderiYapanFenomen',platformaGoreCokGonderiYapanFenomen(fenomenlerYeniListe,'Twitter'));
 
 /* ***** GÖREVLERİN SONU ***** */
 
